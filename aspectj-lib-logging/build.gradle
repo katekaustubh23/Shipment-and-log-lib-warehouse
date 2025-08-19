@@ -1,0 +1,27 @@
+plugins {
+    id 'java-library'
+}
+
+group = 'com.aspectj'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+ext {
+    springBootVersion = '3.2.5'
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-aop:${springBootVersion}"
+    implementation 'org.projectlombok:lombok:1.18.32'
+    compileOnly 'org.slf4j:slf4j-api:2.0.13'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+}
+
